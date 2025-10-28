@@ -9,8 +9,12 @@ function onBallClick(elBall){
     var newHeight
 
     if(currWidth < 400){
-        newWidth = currWidth + 50
-        newHeight = currHeight + 50
+        var randDiam = getRandIntInclusive(20, 60)
+
+        if (currWidth + randDiam > 400) randDiam = 400 - currWidth
+
+        newWidth = currWidth + randDiam
+        newHeight = currHeight + randDiam
     }
     else{
         newWidth = 100
