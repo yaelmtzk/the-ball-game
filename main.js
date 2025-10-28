@@ -1,6 +1,6 @@
 'use strict'
 
-function onBallClick(elBall){
+function onBallClick(elBall, maxDiameter){
 
     var currWidth = parseInt(elBall.clientWidth)
     var currHeight = parseInt(elBall.clientWidth)
@@ -8,15 +8,16 @@ function onBallClick(elBall){
     var newWidth
     var newHeight
 
-    if(currWidth < 400){
+    if(currWidth < maxDiameter){
         var randDiam = getRandIntInclusive(20, 60)
 
-        if (currWidth + randDiam > 400) randDiam = 400 - currWidth
+        if (currWidth + randDiam > maxDiameter) randDiam = maxDiameter - currWidth
 
         newWidth = currWidth + randDiam
         newHeight = currHeight + randDiam
     }
-    else{
+
+    if(newWidth >= maxDiameter){
         newWidth = 100
         newHeight = 100
     }
@@ -27,4 +28,6 @@ function onBallClick(elBall){
     elBall.innerText = newWidth
 
     elBall.style.backgroundColor = getRandomColor()
+
+
 }
