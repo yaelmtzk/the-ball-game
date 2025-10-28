@@ -18,11 +18,38 @@ function onBallClick(elBall, maxDiameter){
 
         if (currWidth + randDiam > maxDiameter) randDiam = maxDiameter - currWidth
 
-        newWidth = currWidth + randDiam
+        newWidth = currWidth + randDiam        
         newHeight = currHeight + randDiam
     }
 
-    if(newWidth >= maxDiameter){
+    elBall.style.width = newWidth + 'px'
+    elBall.style.height = newHeight + 'px'
+
+    elBall.innerText = newWidth
+
+    elBall.style.backgroundColor = getRandomColor()
+}
+
+
+function decreaseBallSize(elBall, amount) {
+
+    var currWidth = parseInt(elBall.clientWidth)
+    var currHeight = parseInt(elBall.clientWidth)
+
+    if (currWidth === 100) return
+
+    var newWidth
+    var newHeight
+    
+    if(currWidth > 100){
+
+        if (currWidth - amount < 100) amount = -((100 - currWidth) - amount)
+
+        newWidth = currWidth - amount
+        newHeight = currHeight - amount
+    }
+
+    if(newWidth <100){
         newWidth = 100
         newHeight = 100
     }
@@ -33,16 +60,10 @@ function onBallClick(elBall, maxDiameter){
     elBall.innerText = newWidth
 }
 
-function changeBallColor(elBall){
-    elBall.style.backgroundColor = getRandomColor()
-}
-
 function onBall3Click(){
 
     var elBall1 = document.querySelector('.ball1')
     var elBall2 = document.querySelector('.ball2')
-
-    console.log(currSize1);
 
     var currSize1 = parseInt(elBall1.clientWidth)
     var currSize2 = parseInt(elBall2.clientWidth)
@@ -61,4 +82,15 @@ function onBall3Click(){
 
     elBall1.style.backgroundColor = currBackColor2
     elBall2.style.backgroundColor = currBackColor1
+}
+
+function onBall4Click(){
+
+    var randDecrease = getRandIntInclusive(20, 60)
+
+    var elBall1 = document.querySelector('.ball1')
+    var elBall2 = document.querySelector('.ball2')
+
+    decreaseBallSize(elBall1, randDecrease)
+    decreaseBallSize(elBall2, randDecrease)
 }
