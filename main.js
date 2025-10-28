@@ -1,6 +1,11 @@
 'use strict'
 
-function onBallClick(elBall, maxDiameter){
+function onBallClick(elBall, maxSize){
+
+    changeBallSize(elBall, maxSize)
+
+    changeBallColor(elBall)
+}
 
     var currWidth = parseInt(elBall.clientWidth)
     var currHeight = parseInt(elBall.clientWidth)
