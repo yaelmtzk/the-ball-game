@@ -35,5 +35,6 @@ function changeBallSize(elBall, maxDiameter){
     elBall.innerText = newWidth
 }
 
+function changeBallColor(elBall){
     elBall.style.backgroundColor = getRandomColor()
 }
