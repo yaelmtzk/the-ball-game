@@ -8,7 +8,12 @@ function onBallClick(elBall, maxDiameter){
     var newWidth
     var newHeight
 
-    if(currWidth < maxDiameter){
+    if (currWidth === maxDiameter) {
+        newWidth = 100
+        newHeight = 100
+    }
+
+    else if(currWidth < maxDiameter){
         var randDiam = getRandIntInclusive(20, 60)
 
         if (currWidth + randDiam > maxDiameter) randDiam = maxDiameter - currWidth
