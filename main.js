@@ -98,3 +98,7 @@ function onBall4Click(){
 function onBall5Click(){
     document.body.style.backgroundColor = getRandomColor()
 }
+
+function onReload(){
+    window.location.reload(true)
+}
