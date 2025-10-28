@@ -7,6 +7,8 @@ function onBallClick(elBall, maxSize){
     changeBallColor(elBall)
 }
 
+function changeBallSize(elBall, maxDiameter){
+
     var currWidth = parseInt(elBall.clientWidth)
     var currHeight = parseInt(elBall.clientWidth)
 
@@ -31,6 +33,7 @@ function onBallClick(elBall, maxSize){
     elBall.style.height = newHeight + 'px'
 
     elBall.innerText = newWidth
+}
 
     elBall.style.backgroundColor = getRandomColor()
 }
