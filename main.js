@@ -94,3 +94,7 @@ function onBall4Click(){
     decreaseBallSize(elBall1, randDecrease)
     decreaseBallSize(elBall2, randDecrease)
 }
+
+function onBall5Click(){
+    document.body.style.backgroundColor = getRandomColor()
+}
