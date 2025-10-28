@@ -28,6 +28,4 @@ function onBallClick(elBall, maxDiameter){
     elBall.innerText = newWidth
 
     elBall.style.backgroundColor = getRandomColor()
-
-
 }
